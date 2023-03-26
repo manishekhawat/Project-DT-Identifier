@@ -1,5 +1,5 @@
-const ErrorTracker = require("../lib/cjs");
-// Create a new instance of ErrorTracker
+import ErrorTracker from "@techbana/error-log-capture";
+
 const tracker = new ErrorTracker();
 
 console.error("This is an error message");
