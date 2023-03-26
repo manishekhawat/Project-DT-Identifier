@@ -1,6 +1,6 @@
 {
   "name": "@techbana/error-log-capture",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "This package helps capture any javascript errors occuring on browser & node server and can send the info to given API endpoint",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
