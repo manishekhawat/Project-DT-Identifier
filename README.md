@@ -22,6 +22,51 @@ const tracker = new ErrorTracker();
 
 ```
 
+### Server side captured log:
+
+```
+
+{
+  message: 'Something went wrong',
+  stack: 'Error: Something went wrong\n' +
+    '    at myFunction (/Users/xxxx/Project/example.js:8:9)\n' +
+    '    at Object.<anonymous> (/Users/xxxx/Project/example.js:11:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1205:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1259:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1068:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:909:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:82:12)\n' +
+    '    at node:internal/main/run_main_module:23:47',
+  filename: '    at myFunction (/Users/xxxx/Project/example.js',
+  lineno: 8,
+  colno: 9,
+  clientInfo: { node: true, nodeVersion: 'v19.1.0' }
+}
+```
+
+### Client side captured log
+
+```
+
+{
+    "message": "\"We caught you\"",
+    "filename": "",
+    "lineno": 0,
+    "colno": 3000,
+    "stack": "Error\n    at console.error (http://localhost:3000/static/js/bundle.js:3567:15)\n    at http://localhost:3000/static/js/bundle.js:436:13\n    at onKeyup (http://localhost:3000/static/js/bundle.js:2119:26)",
+    "clientInfo": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
+        "language": "en-GB",
+        "platform": "MacIntel",
+        "screenWidth": 1440,
+        "screenHeight": 900,
+        "browserName": "Chrome",
+        "browserVersion": "111.0.0.0"
+    }
+}
+
+```
+
 Configure API Key and API endpoint
 
 ```
